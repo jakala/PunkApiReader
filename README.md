@@ -5,16 +5,15 @@ una api de ejemplo. En este caso utilizamos [PunkApi](https://punkapi.com/).
 Se incluye un docker-compose para poder probar directamente la aplicacion. 
 
 ### Instalación
-.- descargamos el ejemplo con git:
-
+- descargamos el ejemplo con git:
 ```
 git clone https://github.com/jakala/PunkApiReader.git
 ```
-Entramos en el directorio del proyecto, y ejecutamos docker-compose:
+- Entramos en el directorio del proyecto, y ejecutamos docker-compose:
 ```
 docker-compose up -d
 ```
-Nos creará un contenedor docker al que podemos acceder con nuestro navegador en:
+- Nos creará un contenedor docker al que podemos acceder con nuestro navegador en:
 ```
 http://localhost:8000
 ```
