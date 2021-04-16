@@ -1,17 +1,8 @@
 <?php
 namespace App\Domain\ValueObject;
 
-final class BeerName
+use App\Domain\ValueObject\Common\StringValueObject;
+
+final class BeerName extends StringValueObject
 {
-    private string $value;
-
-    public function __construct(string $value)
-    {
-        $this->value = $value;
-    }
-
-    public function getValue():string
-    {
-        return $this->value;
-    }
 }

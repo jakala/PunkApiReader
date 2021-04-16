@@ -1,26 +1,20 @@
 <?php
 namespace App\Domain\ValueObject;
 
+use App\Domain\ValueObject\Common\StringValueObject;
 use Domain\Exception\ImageUrlException;
 
-final class BeerImageUrl
+final class BeerImageUrl extends StringValueObject
 {
     const BASE_URI = 'images.punkapi.com';
 
-    private string $value;
-
-    /**
+   /**
      * @throws ImageUrlException
      */
     public function __construct(string $value)
     {
         $this->validateUrl($value);
-        $this->value = $value;
-    }
-
-    public function getValue():string
-    {
-        return $this->value;
+        parent::__construct($value);
     }
 
     /**

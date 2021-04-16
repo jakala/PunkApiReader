@@ -1,6 +1,7 @@
 <?php
 namespace App\Application\Handler;
 
+use App\Application\Service\CreateFoodQuery;
 use App\Domain\Entity\Beer;
 use App\Domain\Entity\BeerList;
 use App\Domain\ValueObject\BeerDescription;
@@ -9,7 +10,6 @@ use App\Domain\ValueObject\BeerId;
 use App\Domain\ValueObject\BeerImageUrl;
 use App\Domain\ValueObject\BeerName;
 use App\Domain\ValueObject\BeerTagline;
-use App\Domain\ValueObject\Food;
 use App\Infrastructure\Service\HttpClient;
 
 class GetBeerListFromApiHandler
@@ -24,7 +24,7 @@ class GetBeerListFromApiHandler
     /**
      * @throws \App\Infrastructure\Exception\ClientException
      */
-    public function getBeerListFromApiByFood(Food $food): BeerList
+    public function getBeerListFromApiByFood(CreateFoodQuery $food): BeerList
     {
         $response = $this->client->searchByCriteria($food);
 

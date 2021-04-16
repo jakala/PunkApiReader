@@ -7,7 +7,7 @@ use App\Domain\ValueObject\Food;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
-class GetBeerDetailList
+class GetBeerDetailListController
 {
     private GetBeerListFromApiHandler $handler;
     public function __construct(GetBeerListFromApiHandler $handler)

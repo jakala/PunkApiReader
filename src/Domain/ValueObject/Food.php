@@ -1,16 +1,8 @@
 <?php
 namespace App\Domain\ValueObject;
 
-class Food
-{
-    private ?string $value;
+use App\Domain\ValueObject\Common\StringValueObject;
 
-    public function __construct(string $value=null)
-    {
-        $this->value = str_replace(' ', '_', $value);
-    }
-    public function getValue(): ?string
-    {
-        return $this->value;
-    }
+final class Food extends StringValueObject
+{
 }
