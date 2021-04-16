@@ -5,20 +5,19 @@ use Domain\Exception\FirstBrewedException;
 
 final class BeerFirstBrewed
 {
-    private \DateTime $firstBrewed;
+    private \DateTime $value;
 
     /**
      * @throws FirstBrewedException
      */
-    public function __construct(string $firstBrewed)
+    public function __construct(string $value)
     {
-        $value = $this->validate($firstBrewed);
-        $this->firstBrewed = $value;
+        $this->value = $this->validate($value);
     }
 
-    public function getDescription(): \Datetime
+    public function getValue(): \Datetime
     {
-        return $this->firstBrewed;
+        return $this->value;
     }
 
     /**

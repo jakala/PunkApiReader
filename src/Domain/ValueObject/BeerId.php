@@ -3,15 +3,15 @@ namespace App\Domain\ValueObject;
 
 final class BeerId
 {
-    private int $id;
+    private int $value;
 
-    public function __construct(int $id)
+    public function __construct(int $value)
     {
-        $this->id = $id;
+        $this->value = $value;
     }
 
-    public function getId():int
+    public function getValue():int
     {
-        return $this->id;
+        return $this->value;
     }
 }

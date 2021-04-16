@@ -3,15 +3,15 @@ namespace App\Domain\ValueObject;
 
 final class BeerName
 {
-    private string $name;
+    private string $value;
 
-    public function __construct(string $name)
+    public function __construct(string $value)
     {
-        $this->name = $name;
+        $this->value = $value;
     }
 
-    public function getName():string
+    public function getValue():string
     {
-        return $this->name;
+        return $this->value;
     }
 }

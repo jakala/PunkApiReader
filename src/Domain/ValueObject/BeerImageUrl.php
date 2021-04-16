@@ -7,20 +7,20 @@ final class BeerImageUrl
 {
     const BASE_URI = 'images.punkapi.com';
 
-    private string $imageUrl;
+    private string $value;
 
     /**
      * @throws ImageUrlException
      */
-    public function __construct(string $imageUrl)
+    public function __construct(string $value)
     {
-        $this->validateUrl($imageUrl);
-        $this->imageUrl = $imageUrl;
+        $this->validateUrl($value);
+        $this->$value = $value;
     }
 
-    public function getImageUrl():string
+    public function getValue():string
     {
-        return $this->imageUrl;
+        return $this->$value;
     }
 
     /**

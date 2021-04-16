@@ -19,18 +19,12 @@ class HttpClient implements HttpClientInterface
         $this->client = new Client();
     }
 
-    public function searchByCriteria(Food $food): BeerList
+    public function searchByCriteria(Food $food): array
     {
-        $uri = self::URI.'/beers?'.http_build_query(['food' => $food->getFood()]);
+        $uri = self::URI.'/beers?'.http_build_query(['food' => $food->getValue()]);
         try {
-            $beerList = new BeerList();
             $results = $this->client->get($uri)->getBody()->getContents();
-            $results = json_decode($results, true);
-            foreach($results as $item) {
-                $beer = new Beer($item['id'], $item['name'], $item['description']);
-                $beerList->addBeer($beer);
-            }
-            return $beerList;
+            return json_decode($results, true);
         } catch (GuzzleException $e) {
             throw new ClientException($e);
         }

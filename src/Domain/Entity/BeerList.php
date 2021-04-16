@@ -3,20 +3,20 @@ namespace App\Domain\Entity;
 
 final class BeerList
 {
-    private array $beer;
+    private array $beerList;
 
     public function __construct()
     {
-        $this->beer = [];
+        $this->beerList = [];
     }
 
     public function addBeer(Beer $beer)
     {
-        $this->beer[$beer->getId()] = $beer;
+        $this->beerList[$beer->getId()->getValue()] = $beer;
     }
 
     public function getList(): array
     {
-        return $this->beer;
+        return array_values($this->beerList);
     }
 }
