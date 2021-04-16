@@ -3,15 +3,15 @@ namespace App\Domain\ValueObject;
 
 final class BeerTagline
 {
-    private string $tagline;
+    private string $value;
 
-    public function __construct(string $tagline)
+    public function __construct(string $value)
     {
-        $this->tagline = $tagline;
+        $this->$value = $value;
     }
 
-    public function getTagline():string
+    public function getValue():string
     {
-        return $this->tagline;
+        return $this->value;
     }
 }

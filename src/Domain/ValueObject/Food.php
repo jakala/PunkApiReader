@@ -3,14 +3,14 @@ namespace App\Domain\ValueObject;
 
 class Food
 {
-    private string $food;
+    private string $value;
 
-    public function __construct(string $food)
+    public function __construct(string $value)
     {
-        $this->food = str_replace(' ', '_', $food);
+        $this->value = str_replace(' ', '_', $value);
     }
-    public function getFood(): string
+    public function getValue(): string
     {
-        return $this->food;
+        return $this->value;
     }
 }

@@ -15,9 +15,9 @@ class BeerResponse implements \JsonSerializable
     public function jsonSerialize(): array
     {
         return [
-            'id' => $this->beer->getId(),
-            'name' => $this->beer->getName(),
-            'description' => $this->beer->getDescription()
+            'id' => $this->beer->getId()->getValue(),
+            'name' => $this->beer->getName()->getValue(),
+            'description' => $this->beer->getDescription()->getValue(),
         ];
     }
 }
