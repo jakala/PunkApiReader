@@ -8,7 +8,7 @@ use App\Domain\ValueObject\BeerImageUrl;
 use App\Domain\ValueObject\BeerName;
 use App\Domain\ValueObject\BeerTagline;
 
-final class beer
+final class Beer
 {
     private BeerId $id;
     private BeerName $name;
