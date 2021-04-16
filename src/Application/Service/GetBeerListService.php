@@ -7,7 +7,7 @@ use App\Domain\Entity\BeerList;
 
 final class GetBeerListService
 {
-    private BeerRepositoryInterface $repository;
+/*    private BeerRepositoryInterface $repository;
 
     public function __construct(BeerRepositoryInterface $repository)
     {
@@ -18,5 +18,5 @@ final class GetBeerListService
     {
         return $this->repository->searchByCriteria($query);
     }
-
+*/
 }
