@@ -1,0 +1,12 @@
+version: '3.3'
+
+services:
+  server:
+    container_name: "punkapireader"
+    image: php:8.0
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/punkapireader
+    working_dir: /punkapireader
+    entrypoint: ["php", "-S", "0.0.0.0:8000", "-t", "/punkapireader/public/"]
