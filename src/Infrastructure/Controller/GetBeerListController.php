@@ -4,22 +4,23 @@ namespace App\Infrastructure\Controller;
 use App\Application\Handler\GetBeerListFromApiHandler;
 use App\Application\Response\BeerListResponse;
 use App\Application\Service\CreateFoodQuery;
+use App\Application\Service\GetBeerListService;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 class GetBeerListController
 {
-    private GetBeerListFromApiHandler $handler;
-    public function __construct(GetBeerListFromApiHandler $handler)
+    private GetBeerListService $service;
+
+    public function __construct(GetBeerListService $service)
     {
-        $this->handler = $handler;
+        $this->service = $service;
     }
     public function __invoke(Request $request)
     {
         $foodRequest = new CreateFoodQuery($request->request->get('food'));
-
-        $data =$this->handler->getBeerListFromApiByFood($foodRequest);
-        $response = new BeerListResponse($data);
+        $beerList = $this->service->__invoke($foodRequest);
+        $response = new BeerListResponse($beerList);
         return new JsonResponse($response);
 
     }
