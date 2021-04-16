@@ -7,7 +7,7 @@ final class BeerTagline
 
     public function __construct(string $value)
     {
-        $this->$value = $value;
+        $this->value = $value;
     }
 
     public function getValue():string

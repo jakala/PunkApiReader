@@ -15,12 +15,12 @@ final class BeerImageUrl
     public function __construct(string $value)
     {
         $this->validateUrl($value);
-        $this->$value = $value;
+        $this->value = $value;
     }
 
     public function getValue():string
     {
-        return $this->$value;
+        return $this->value;
     }
 
     /**
