@@ -9,7 +9,7 @@ use App\Infrastructure\Exception\ClientException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 
-class HttpClient
+class HttpClient implements HttpClientInterface
 {
     const URI = 'https://api.punkapi.com/v2';
     private Client $client;
@@ -19,9 +19,9 @@ class HttpClient
         $this->client = new Client();
     }
 
-    public function searchByCriteria(Food $food)
+    public function searchByCriteria(Food $food): BeerList
     {
-        $uri = self::ROOT_ENDPOINT.'/beers?'.http_build_query(['food' => $food->getFood()]);
+        $uri = self::URI.'/beers?'.http_build_query(['food' => $food->getFood()]);
         try {
             $beerList = new BeerList();
             $results = $this->client->get($uri)->getBody()->getContents();
