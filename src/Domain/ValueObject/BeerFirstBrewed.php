@@ -23,11 +23,11 @@ final class BeerFirstBrewed
     /**
      * @throws FirstBrewedException
      */
-    private function validate(string $datetime) : \DateTime
+    private function validate(string $datetime): \DateTime
     {
         $value = \DateTime::createFromFormat('m/Y', $datetime);
-        if(is_null($value)) {
-            throw new FirstBrewedException('Datetime not valid: "'.$datetime.'"');
+        if (is_null($value)) {
+            throw new FirstBrewedException('Datetime not valid: "' . $datetime . '"');
         }
 
         return $value;

@@ -2,12 +2,12 @@
 namespace App\Infrastructure\Controller;
 
 use App\Application\Handler\GetBeerListFromApiHandler;
-use App\Application\Response\BeerListResponse;
+use App\Application\Response\BeerDetailListResponse;
 use App\Domain\ValueObject\Food;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
-class GetBeerListFromPunkApiController
+class GetBeerDetailList
 {
     private GetBeerListFromApiHandler $handler;
     public function __construct(GetBeerListFromApiHandler $handler)
@@ -19,7 +19,7 @@ class GetBeerListFromPunkApiController
         $foodString = $request->query->get('food');
         $food = new Food($foodString);
         $data =$this->handler->getBeerListFromApiByFood($food);
-        $response = new BeerListResponse($data);
+        $response = new BeerDetailListResponse($data);
         return new JsonResponse($response);
 
     }
