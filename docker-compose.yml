@@ -3,7 +3,7 @@ version: '3.3'
 services:
   server:
     container_name: "punkapireader"
-    image: php:8.0
+    build: .
     ports:
       - "8000:8000"
     volumes:
