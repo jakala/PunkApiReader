@@ -31,4 +31,13 @@ final class ApiRequestContext extends RawMinkContext
         $this->request->sendRequestWithPyStringNode($method, $this->locatePath($url), $body);
     }
 
+    /**
+     * @Given I send a :method request to :url with params:
+     */
+    public function ISendARequestToWithParams($method, $url, PyStringNode $query): void
+    {
+        $query = json_decode($query->getRaw(), true);
+        $this->request->sendRequest($method, $url, ['parameters' => $query]);
+    }
+
 }

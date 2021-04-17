@@ -4,7 +4,6 @@ default:
             contexts:
                 - App\Tests\Behat\DemoContext
                 - App\Tests\Behat\ApiRequestContext
-                - App\Tests\Behat\ApiResponseContext
                 - Behat\MinkExtension\Context\MinkContext
 
     extensions:
