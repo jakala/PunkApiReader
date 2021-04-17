@@ -2,7 +2,6 @@
 namespace App\Tests\Infrastructure\Repository;
 
 use App\Application\Service\CreateFoodQuery;
-use App\Domain\Entity\BeerList;
 use App\Infrastructure\Repository\PunkApiRepository;
 use PHPUnit\Framework\TestCase;
 
@@ -18,5 +17,4 @@ class PunkApiRepositoryTest extends TestCase
 
         $this->assertIsArray($beerList);
     }
-
 }
