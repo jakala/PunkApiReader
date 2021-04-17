@@ -2,8 +2,9 @@
 
 namespace App\Infrastructure\Controller;
 
-use App\Application\Handler\GetBeerListHandler;
-use App\Application\Service\CreateFoodQuery;
+use App\Application\Handler\GetBeerDetailListHandler;
+use App\Application\Command\FoodQuery;
+use App\Domain\ValueObject\Food;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -12,12 +13,12 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class GetBeerDetailListController
 {
-    private GetBeerListHandler $handler;
+    private GetBeerDetailListHandler $handler;
 
     /**
      * GetBeerListController constructor.
      */
-    public function __construct(GetBeerListHandler $handler)
+    public function __construct(GetBeerDetailListHandler $handler)
     {
         $this->handler = $handler;
     }
@@ -30,7 +31,8 @@ class GetBeerDetailListController
      */
     public function __invoke(Request $request)
     {
-        $foodQuery = new CreateFoodQuery($request->get('food'));
+        $food = new Food($request->get('food'));
+        $foodQuery = new FoodQuery($food);
         $response = $this->handler->__invoke($foodQuery);
 
         return new JsonResponse($response);

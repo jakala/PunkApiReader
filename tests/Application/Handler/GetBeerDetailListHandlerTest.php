@@ -6,6 +6,7 @@ use App\Application\Handler\GetBeerDetailListHandler;
 use App\Application\Response\BeerDetailListResponse;
 use App\Application\Service\CreateBeerlistFromApi;
 use App\Domain\Repository\BeerRepositoryInterface;
+use App\Domain\ValueObject\Food;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -17,7 +18,7 @@ class GetBeerDetailListHandlerTest extends TestCase
     /** @test */
     public function it_should_gave_a_valid_beer_list(): void
     {
-        $food = new FoodQuery('meal');
+        $food = new FoodQuery(new Food('meal'));
         $repository = $this->createMock(BeerRepositoryInterface::class);
         $repository
             ->method('searchByCriteria')

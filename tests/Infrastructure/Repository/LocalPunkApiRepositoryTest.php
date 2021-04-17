@@ -6,7 +6,7 @@ use App\Domain\ValueObject\Food;
 use App\Infrastructure\Repository\LocalPunkApiRepository;
 use PHPUnit\Framework\TestCase;
 
-class PunkApiRepositoryTest extends TestCase
+class LocalPunkApiRepositoryTest extends TestCase
 {
     /** @test */
     public function it_should_gave_a_valid_beer_list(): void

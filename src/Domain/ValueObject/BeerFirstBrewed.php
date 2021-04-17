@@ -2,7 +2,7 @@
 
 namespace App\Domain\ValueObject;
 
-use Domain\Exception\FirstBrewedException;
+use App\Domain\Exception\FirstBrewedException;
 
 final class BeerFirstBrewed
 {
@@ -27,7 +27,7 @@ final class BeerFirstBrewed
     private function validate(string $datetime): \DateTime
     {
         $value = \DateTime::createFromFormat('m/Y', $datetime);
-        if (is_null($value)) {
+        if (false === $value) {
             throw new FirstBrewedException('Datetime not valid: "'.$datetime.'"');
         }
 

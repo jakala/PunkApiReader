@@ -4,6 +4,7 @@ namespace App\Infrastructure\Controller;
 
 use App\Application\Command\FoodQuery;
 use App\Application\Handler\GetBeerListHandler;
+use App\Domain\ValueObject\Food;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -30,7 +31,8 @@ class GetBeerListController
      */
     public function __invoke(Request $request)
     {
-        $foodQuery = new FoodQuery($request->get('food'));
+        $food = new Food($request->get('food'));
+        $foodQuery = new FoodQuery($food);
         $response = $this->handler->__invoke($foodQuery);
 
         return new JsonResponse($response);

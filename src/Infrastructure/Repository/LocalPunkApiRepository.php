@@ -12,7 +12,7 @@ class LocalPunkApiRepository implements BeerRepositoryInterface
 {
     public function searchByCriteria(FoodQuery $query): array
     {
-        $meal = $query->food();
+        $meal = $query->food()->getValue();
 
         return [
             [

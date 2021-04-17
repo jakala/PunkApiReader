@@ -3,7 +3,7 @@
 namespace App\Domain\ValueObject;
 
 use App\Domain\ValueObject\Common\StringValueObject;
-use Domain\Exception\ImageUrlException;
+use App\Domain\Exception\ImageUrlException;
 
 final class BeerImageUrl extends StringValueObject
 {
@@ -24,7 +24,7 @@ final class BeerImageUrl extends StringValueObject
     private function validateUrl(string $url): void
     {
         $components = parse_url($url);
-        if (self::BASE_URI !== $components['host']) {
+        if (empty($components['host']) || self::BASE_URI !== $components['host']) {
             throw new ImageUrlException('url "'.$url.'" is not from PunkApi', 400);
         }
     }
