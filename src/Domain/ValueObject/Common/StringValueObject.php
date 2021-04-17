@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Domain\ValueObject\Common;
 
 abstract class StringValueObject

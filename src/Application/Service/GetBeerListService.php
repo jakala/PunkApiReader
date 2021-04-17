@@ -3,8 +3,8 @@
 namespace App\Application\Service;
 
 use App\Domain\Entity\Beer;
-use App\Domain\Repository\BeerRepositoryInterface;
 use App\Domain\Entity\BeerList;
+use App\Domain\Repository\BeerRepositoryInterface;
 use App\Domain\ValueObject\BeerDescription;
 use App\Domain\ValueObject\BeerFirstBrewed;
 use App\Domain\ValueObject\BeerId;
@@ -21,19 +21,20 @@ final class GetBeerListService
         $this->repository = $repository;
     }
 
-    public function __invoke(CreateFoodQuery $query) : BeerList
+    public function __invoke(CreateFoodQuery $query): BeerList
     {
         $response = $this->repository->searchByCriteria($query);
+
         return $this->createBeerListFromResponse($response);
     }
 
-    private function createBeerListFromResponse(array $list) : BeerList
+    private function createBeerListFromResponse(array $list): BeerList
     {
         $beerList = new BeerList();
         foreach ($list as $item) {
             $beer = $this->createBeerFromItem($item);
             $beerList->addBeer($beer);
-         }
+        }
 
         return $beerList;
     }
@@ -48,7 +49,5 @@ final class GetBeerListService
             new BeerTagline($item['tagline']),
             new BeerFirstBrewed($item['first_brewed'])
         );
-
     }
-
 }

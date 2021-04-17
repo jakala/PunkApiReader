@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Domain\ValueObject;
 
 use App\Domain\ValueObject\Common\StringValueObject;
@@ -8,7 +9,7 @@ final class BeerImageUrl extends StringValueObject
 {
     const BASE_URI = 'images.punkapi.com';
 
-   /**
+    /**
      * @throws ImageUrlException
      */
     public function __construct(string $value)
@@ -23,8 +24,8 @@ final class BeerImageUrl extends StringValueObject
     private function validateUrl(string $url): void
     {
         $components = parse_url($url);
-        if(self::BASE_URI !== $components['host']) {
-            throw new ImageUrlException('url "'.$url.'" is not from PunkApi',400);
+        if (self::BASE_URI !== $components['host']) {
+            throw new ImageUrlException('url "'.$url.'" is not from PunkApi', 400);
         }
     }
 }

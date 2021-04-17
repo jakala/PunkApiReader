@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Application\Service;
 
 final class CreateFoodQuery
@@ -14,5 +15,4 @@ final class CreateFoodQuery
     {
         return $this->food;
     }
-
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Infrastructure\Controller;
 
 use App\Application\Response\BeerListResponse;
@@ -15,12 +16,13 @@ class GetBeerListController
     {
         $this->service = $service;
     }
+
     public function __invoke(Request $request)
     {
         $foodRequest = new CreateFoodQuery($request->get('food'));
         $beerList = $this->service->__invoke($foodRequest);
         $response = new BeerListResponse($beerList);
-        return new JsonResponse($response);
 
+        return new JsonResponse($response);
     }
 }

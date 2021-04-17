@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Domain\Entity;
 
 use App\Domain\ValueObject\BeerDescription;
@@ -48,7 +49,7 @@ final class Beer
         return $this->description;
     }
 
-   public function getImageUrl(): BeerImageUrl
+    public function getImageUrl(): BeerImageUrl
     {
         return $this->imageUrl;
     }
@@ -62,6 +63,4 @@ final class Beer
     {
         return $this->firstBrewed;
     }
-
-
 }

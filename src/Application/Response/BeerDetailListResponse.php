@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Application\Response;
 
 use App\Domain\Entity\Beer;
@@ -6,7 +7,7 @@ use App\Domain\Entity\BeerList;
 
 class BeerDetailListResponse implements \JsonSerializable
 {
-    /** @var BeerResponse[] $list */
+    /** @var BeerResponse[] */
     private array $list;
 
     public function __construct(BeerList $list)

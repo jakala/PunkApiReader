@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Domain\ValueObject;
 
 final class BeerId
@@ -10,7 +11,7 @@ final class BeerId
         $this->value = $value;
     }
 
-    public function getValue():int
+    public function getValue(): int
     {
         return $this->value;
     }

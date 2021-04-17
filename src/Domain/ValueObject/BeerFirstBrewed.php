@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Domain\ValueObject;
 
 use Domain\Exception\FirstBrewedException;
@@ -27,7 +28,7 @@ final class BeerFirstBrewed
     {
         $value = \DateTime::createFromFormat('m/Y', $datetime);
         if (is_null($value)) {
-            throw new FirstBrewedException('Datetime not valid: "' . $datetime . '"');
+            throw new FirstBrewedException('Datetime not valid: "'.$datetime.'"');
         }
 
         return $value;
