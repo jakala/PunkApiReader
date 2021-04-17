@@ -6,5 +6,5 @@ use App\Domain\Entity\BeerList;
 
 interface BeerRepositoryInterface
 {
-    public function searchByCriteria(CreateFoodQuery $query): BeerList;
+    public function searchByCriteria(CreateFoodQuery $query): array;
 }

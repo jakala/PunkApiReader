@@ -1,0 +1,16 @@
+default:
+    suites:
+        default:
+            contexts:
+                - App\Tests\Behat\DemoContext
+                - App\Tests\Behat\ApiRequestContext
+                - App\Tests\Behat\ApiResponseContext
+                - Behat\MinkExtension\Context\MinkContext
+
+    extensions:
+        FriendsOfBehat\SymfonyExtension: ~
+        Behat\MinkExtension:
+            base_url: ''
+            sessions:
+                symfony:
+                    symfony: ~

@@ -16,7 +16,7 @@ class GetBeerListServiceTest extends TestCase
         $service= new GetBeerListService($repository);
 
         $foodQuery = new CreateFoodQuery("meal");
-        $beerList = new BeerList();
+        $beerList = [];
         $repository
             ->method('searchByCriteria')
             ->with($foodQuery)
