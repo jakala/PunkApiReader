@@ -8,5 +8,4 @@ Feature:
     }
     """
     Then the response status code should be 200
-    And th
 

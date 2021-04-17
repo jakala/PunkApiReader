@@ -1,11 +1,11 @@
 <?php
-namespace App\Application\Service;
+namespace App\Application\Command;
 
 /**
  * Class CreateFoodQuery
  * @package App\Application\Service
  */
-final class CreateFoodQuery
+final class FoodQuery
 {
     /** @var string $food */
     private string $food;

@@ -2,9 +2,9 @@
 
 namespace App\Domain\Repository;
 
-use App\Application\Service\CreateFoodQuery;
+use App\Application\Command\FoodQuery;
 
 interface BeerRepositoryInterface
 {
-    public function searchByCriteria(CreateFoodQuery $query): array;
+    public function searchByCriteria(FoodQuery $query): array;
 }

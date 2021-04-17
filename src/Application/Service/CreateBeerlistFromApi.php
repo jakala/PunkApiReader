@@ -8,16 +8,16 @@ use App\Domain\Entity\BeerList;
  * Class CreateBeerlistFromApiResponse
  * @package App\Application\Service
  */
-class CreateBeerlistFromApiResponse
+class CreateBeerlistFromApi
 {
-    /** @var CreateBeerFromApiResponse */
-    private CreateBeerFromApiResponse $beerCreator;
+    /** @var CreateBeerFromApi */
+    private CreateBeerFromApi $beerCreator;
 
     /**
      * CreateBeerlistFromApiResponse constructor.
-     * @param CreateBeerFromApiResponse $beerCreator
+     * @param CreateBeerFromApi $beerCreator
      */
-    public function __construct(CreateBeerFromApiResponse $beerCreator)
+    public function __construct(CreateBeerFromApi $beerCreator)
     {
         $this->beerCreator = $beerCreator;
     }
@@ -32,7 +32,7 @@ class CreateBeerlistFromApiResponse
     {
         $beerList = new BeerList();
         foreach($list as $item) {
-            $beerList->add($this->beerCreator->createBeer($item));
+            $beerList->addBeer($this->beerCreator->createBeer($item));
         }
         return $beerList;
     }

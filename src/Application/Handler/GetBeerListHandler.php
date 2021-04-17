@@ -2,8 +2,8 @@
 namespace App\Application\Handler;
 
 use App\Application\Response\BeerListResponse;
-use App\Application\Service\CreateBeerlistFromApiResponse;
-use App\Application\Service\CreateFoodQuery;
+use App\Application\Service\CreateBeerlistFromApi;
+use App\Application\Command\FoodQuery;
 use App\Domain\Repository\BeerRepositoryInterface;
 
 /**
@@ -15,27 +15,27 @@ final class GetBeerListHandler
     /** @var BeerRepositoryInterface $repository */
     private BeerRepositoryInterface $repository;
 
-    /** @var CreateBeerlistFromApiResponse $beerlistCreator */
-    private CreateBeerlistFromApiResponse $beerListCreator;
+    /** @var CreateBeerlistFromApi $beerlistCreator */
+    private CreateBeerlistFromApi $beerListCreator;
 
     /**
      * GetBeerListHandler constructor.
      * @param BeerRepositoryInterface $repository
-     * @param CreateBeerlistFromApiResponse $beerlistCreator
+     * @param CreateBeerlistFromApi $beerlistCreator
      */
-    public function __construct(BeerRepositoryInterface $repository, CreateBeerlistFromApiResponse $beerlistCreator)
+    public function __construct(BeerRepositoryInterface $repository, CreateBeerlistFromApi $beerlistCreator)
     {
         $this->repository = $repository;
         $this->beerListCreator = $beerlistCreator;
     }
 
     /**
-     * @param CreateFoodQuery $food
+     * @param FoodQuery $food
      * @return BeerListResponse
      * @throws \Domain\Exception\FirstBrewedException
      * @throws \Domain\Exception\ImageUrlException
      */
-    public function __invoke(CreateFoodQuery $food) : BeerListResponse
+    public function __invoke(FoodQuery $food) : BeerListResponse
     {
         $apiResponse = $this->repository->searchByCriteria($food);
         $beerlist = $this->beerListCreator->createBeerList($apiResponse);

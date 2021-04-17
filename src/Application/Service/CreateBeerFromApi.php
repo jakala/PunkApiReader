@@ -14,7 +14,7 @@ use App\Domain\ValueObject\BeerTagline;
  * Class CreateBeerFromApiResponse
  * @package App\Application\Service
  */
-final class CreateBeerFromApiResponse
+final class CreateBeerFromApi
 {
     /**
      * @param array $item

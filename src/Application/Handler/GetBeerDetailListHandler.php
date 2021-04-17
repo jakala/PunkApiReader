@@ -2,7 +2,7 @@
 namespace App\Application\Handler;
 
 use App\Application\Response\BeerDetailListResponse;
-use App\Application\Service\CreateBeerlistFromApiResponse;
+use App\Application\Service\CreateBeerlistFromApi;
 use App\Application\Service\CreateFoodQuery;
 use App\Domain\Repository\BeerRepositoryInterface;
 
@@ -15,15 +15,15 @@ final class GetBeerDetailListHandler
     /** @var BeerRepositoryInterface $repository */
     private BeerRepositoryInterface $repository;
 
-    /** @var CreateBeerlistFromApiResponse $beerlistCreator */
-    private CreateBeerlistFromApiResponse $beerListCreator;
+    /** @var CreateBeerlistFromApi $beerlistCreator */
+    private CreateBeerlistFromApi $beerListCreator;
 
     /**
      * GetBeerListHandler constructor.
      * @param BeerRepositoryInterface $repository
-     * @param CreateBeerlistFromApiResponse $beerlistCreator
+     * @param CreateBeerlistFromApi $beerlistCreator
      */
-    public function __construct(BeerRepositoryInterface $repository, CreateBeerlistFromApiResponse $beerlistCreator)
+    public function __construct(BeerRepositoryInterface $repository, CreateBeerlistFromApi $beerlistCreator)
     {
         $this->repository = $repository;
         $this->beerListCreator = $beerlistCreator;

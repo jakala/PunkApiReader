@@ -32,9 +32,9 @@ services:
     # sobreescribimos los handlers para que apliquen un Repository Real
     App\Application\Handler\GetBeerListHandler:
         arguments:
-            - "@App\\Infrastructure\\Repository\\PunkApiRepository"
-            - "@App\\Application\\Service\\CreateBeerlistFromApiResponse"
+            - "@App\\Infrastructure\\Repository\\LocalPunkApiRepository"
+            - "@App\\Application\\Service\\CreateBeerlistFromApi"
     App\Application\Handler\GetBeerDetailListHandler:
         arguments:
-            - "@App\\Infrastructure\\Repository\\PunkApiRepository"
-            - "@App\\Application\\Service\\CreateBeerlistFromApiResponse"
+            - "@App\\Infrastructure\\Repository\\LocalPunkApiRepository"
+            - "@App\\Application\\Service\\CreateBeerlistFromApi"

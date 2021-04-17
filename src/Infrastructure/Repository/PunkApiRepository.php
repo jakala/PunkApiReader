@@ -2,7 +2,7 @@
 
 namespace App\Infrastructure\Repository;
 
-use App\Application\Service\CreateFoodQuery;
+use App\Application\Command\FoodQuery;
 use App\Domain\Repository\BeerRepositoryInterface;
 use App\Infrastructure\Exception\ClientException;
 use GuzzleHttp\Client;
@@ -28,11 +28,11 @@ class PunkApiRepository implements BeerRepositoryInterface
     }
 
     /**
-     * @param CreateFoodQuery $query
+     * @param FoodQuery $query
      * @return array
      * @throws ClientException
      */
-    public function searchByCriteria(CreateFoodQuery $query): array
+    public function searchByCriteria(FoodQuery $query): array
     {
         $uri = self::ROOT_ENDPOINT.'/beers?'.http_build_query(['food' => $query->food()]);
         try {
