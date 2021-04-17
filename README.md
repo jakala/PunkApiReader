@@ -82,9 +82,5 @@ dentro de la estructura. En su lugar tenemos algo más básico con los directori
 
 # TODO
 - implementar CQRS 
-- más tests
-- análisis de cobertura de test.
-- métricas 
-- php-cs-fixer
 - despliegue con CI/CD (quizás github actions?)
 - control propio de errores (mostrar un json con una respuesta de la exception lanzada)
