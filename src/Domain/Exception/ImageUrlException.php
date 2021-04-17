@@ -1,6 +1,6 @@
 <?php
 namespace Domain\Exception;
 
-class ImageUrlException extends \Exception
+final class ImageUrlException extends \Exception
 {
 }

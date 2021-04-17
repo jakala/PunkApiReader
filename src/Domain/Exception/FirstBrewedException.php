@@ -1,6 +1,6 @@
 <?php
 namespace Domain\Exception;
 
-class FirstBrewedException extends \Exception
+final class FirstBrewedException extends \Exception
 {
 }
