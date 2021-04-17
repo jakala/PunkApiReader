@@ -9,6 +9,10 @@ use App\Domain\ValueObject\BeerImageUrl;
 use App\Domain\ValueObject\BeerName;
 use App\Domain\ValueObject\BeerTagline;
 
+/**
+ * Class Beer
+ * @package App\Domain\Entity
+ */
 final class Beer
 {
     private BeerId $id;
@@ -18,6 +22,15 @@ final class Beer
     private BeerTagline $tagline;
     private BeerFirstBrewed $firstBrewed;
 
+    /**
+     * Beer constructor.
+     * @param BeerId $id
+     * @param BeerName $name
+     * @param BeerDescription $description
+     * @param BeerImageUrl $imageUrl
+     * @param BeerTagline $tagline
+     * @param BeerFirstBrewed $firstBrewed
+     */
     public function __construct(
         BeerId $id,
         BeerName $name,
@@ -34,31 +47,49 @@ final class Beer
         $this->firstBrewed = $firstBrewed;
     }
 
+    /**
+     * @return BeerId
+     */
     public function getId(): BeerId
     {
         return $this->id;
     }
 
+    /**
+     * @return BeerName
+     */
     public function getName(): BeerName
     {
         return $this->name;
     }
 
+    /**
+     * @return BeerDescription
+     */
     public function getDescription(): BeerDescription
     {
         return $this->description;
     }
 
+    /**
+     * @return BeerImageUrl
+     */
     public function getImageUrl(): BeerImageUrl
     {
         return $this->imageUrl;
     }
 
+    /**
+     * @return BeerTagline
+     */
     public function getTagline(): BeerTagline
     {
         return $this->tagline;
     }
 
+    /**
+     * @return BeerFirstBrewed
+     */
     public function getFirstBrewed(): BeerFirstBrewed
     {
         return $this->firstBrewed;

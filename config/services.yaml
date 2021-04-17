@@ -29,6 +29,12 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
-    App\Application\Service\GetBeerListService:
+    # sobreescribimos los handlers para que apliquen un Repository Real
+    App\Application\Handler\GetBeerListHandler:
         arguments:
             - "@App\\Infrastructure\\Repository\\PunkApiRepository"
+            - "@App\\Application\\Service\\CreateBeerlistFromApiResponse"
+    App\Application\Handler\GetBeerDetailListHandler:
+        arguments:
+            - "@App\\Infrastructure\\Repository\\PunkApiRepository"
+            - "@App\\Application\\Service\\CreateBeerlistFromApiResponse"

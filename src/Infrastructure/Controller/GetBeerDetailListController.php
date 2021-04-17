@@ -1,28 +1,41 @@
 <?php
-
 namespace App\Infrastructure\Controller;
 
-use App\Application\Response\BeerDetailListResponse;
+use App\Application\Handler\GetBeerListHandler;
 use App\Application\Service\CreateFoodQuery;
-use App\Application\Service\GetBeerListService;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Class GetBeerDetailListController
+ * @package App\Infrastructure\Controller
+ */
 class GetBeerDetailListController
 {
-    private GetBeerListService $service;
+    /** @var GetBeerListHandler  */
+    private GetBeerListHandler $handler;
 
-    public function __construct(GetBeerListService $service)
+    /**
+     * GetBeerListController constructor.
+     * @param GetBeerListHandler $handler
+     */
+    public function __construct(GetBeerListHandler $handler)
     {
-        $this->service = $service;
+        $this->handler = $handler;
     }
 
+    /**
+     * @param Request $request
+     * @return JsonResponse
+     * @throws \Domain\Exception\FirstBrewedException
+     * @throws \Domain\Exception\ImageUrlException
+     */
     public function __invoke(Request $request)
     {
-        $foodRequest = new CreateFoodQuery($request->get('food'));
-        $beerList = $this->service->__invoke($foodRequest);
-        $response = new BeerDetailListResponse($beerList);
+        $foodQuery = new CreateFoodQuery($request->get('food'));
+        $response = $this->handler->__invoke($foodQuery);
 
         return new JsonResponse($response);
     }
+
 }

@@ -1,13 +1,18 @@
 <?php
-
 namespace App\Infrastructure\Controller;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * Class HealthCheckGetController
+ * @package App\Infrastructure\Controller
+ */
 class HealthCheckGetController
 {
-    public function __invoke(): Response
+    /**
+     * @return JsonResponse
+     */
+    public function __invoke(): JsonResponse
     {
         return new JsonResponse(
             ['status' => 'ok']
