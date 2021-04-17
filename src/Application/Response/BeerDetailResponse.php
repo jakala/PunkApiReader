@@ -1,29 +1,24 @@
 <?php
+
 namespace App\Application\Response;
 
 use App\Domain\Entity\Beer;
 
 /**
- * Class BeerDetailResponse
- * @package App\Application\Response
+ * Class BeerDetailResponse.
  */
 class BeerDetailResponse implements \JsonSerializable
 {
-    /** @var Beer $beer */
     private Beer $beer;
 
     /**
      * BeerDetailResponse constructor.
-     * @param Beer $beer
      */
     public function __construct(Beer $beer)
     {
         $this->beer = $beer;
     }
 
-    /**
-     * @return array
-     */
     public function jsonSerialize(): array
     {
         return [

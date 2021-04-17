@@ -1,13 +1,12 @@
 <?php
+
 namespace App\Domain\Entity;
 
 /**
- * Class BeerList
- * @package App\Domain\Entity
+ * Class BeerList.
  */
 final class BeerList
 {
-    /** @var array $beerList */
     private array $beerList;
 
     /**
@@ -18,17 +17,11 @@ final class BeerList
         $this->beerList = [];
     }
 
-    /**
-     * @param Beer $beer
-     */
     public function addBeer(Beer $beer)
     {
         $this->beerList[$beer->getId()->getValue()] = $beer;
     }
 
-    /**
-     * @return array
-     */
     public function getList(): array
     {
         return array_values($this->beerList);

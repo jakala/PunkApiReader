@@ -11,18 +11,15 @@ use App\Domain\ValueObject\BeerName;
 use App\Domain\ValueObject\BeerTagline;
 
 /**
- * Class CreateBeerFromApiResponse
- * @package App\Application\Service
+ * Class CreateBeerFromApiResponse.
  */
 final class CreateBeerFromApi
 {
     /**
-     * @param array $item
-     * @return Beer
      * @throws \Domain\Exception\FirstBrewedException
      * @throws \Domain\Exception\ImageUrlException
      */
-    public function createBeer(array $item) : Beer
+    public function createBeer(array $item): Beer
     {
         return new Beer(
             new BeerId($item['id']),

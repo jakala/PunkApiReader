@@ -1,23 +1,21 @@
 <?php
+
 namespace App\Infrastructure\Controller;
 
-use App\Application\Handler\GetBeerListHandler;
 use App\Application\Command\FoodQuery;
+use App\Application\Handler\GetBeerListHandler;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Class GetBeerListController
- * @package App\Infrastructure\Controller
+ * Class GetBeerListController.
  */
 class GetBeerListController
 {
-    /** @var GetBeerListHandler  */
     private GetBeerListHandler $handler;
 
     /**
      * GetBeerListController constructor.
-     * @param GetBeerListHandler $handler
      */
     public function __construct(GetBeerListHandler $handler)
     {
@@ -25,8 +23,8 @@ class GetBeerListController
     }
 
     /**
-     * @param Request $request
      * @return JsonResponse
+     *
      * @throws \Domain\Exception\FirstBrewedException
      * @throws \Domain\Exception\ImageUrlException
      */
