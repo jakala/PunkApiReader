@@ -81,6 +81,7 @@ dentro de la estructura. En su lugar tenemos algo más básico con los directori
 `Domain` e `Infrastructure`.
 
 # TODO
-- implementar CQRS 
+- implementar CQRS
+- usar scripts (tipo make) para simplificar la creación de informes de cobertura y tests  
 - despliegue con CI/CD (quizás github actions?)
 - control propio de errores (mostrar un json con una respuesta de la exception lanzada)
