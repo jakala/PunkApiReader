@@ -1,9 +1,9 @@
 <?php
 namespace App\Application\Handler;
 
+use App\Application\Command\FoodQuery;
 use App\Application\Response\BeerDetailListResponse;
 use App\Application\Service\CreateBeerlistFromApi;
-use App\Application\Service\CreateFoodQuery;
 use App\Domain\Repository\BeerRepositoryInterface;
 
 /**
@@ -30,12 +30,12 @@ final class GetBeerDetailListHandler
     }
 
     /**
-     * @param CreateFoodQuery $food
+     * @param FoodQuery $food
      * @return BeerDetailListResponse
      * @throws \Domain\Exception\FirstBrewedException
      * @throws \Domain\Exception\ImageUrlException
      */
-    public function __invoke(CreateFoodQuery $food) : BeerDetailListResponse
+    public function __invoke(FoodQuery $food) : BeerDetailListResponse
     {
         $apiResponse = $this->repository->searchByCriteria($food);
         $beerlist = $this->beerListCreator->createBeerList($apiResponse);

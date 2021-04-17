@@ -24,6 +24,9 @@
     <server name="SHELL_VERBOSITY" value="-1"/>
     <server name="XDEBUG_MODE" value="coverage"/>
   </php>
+  <extensions>
+    <extension class="App\Tests\Hooks\BypassFinalHook"/>
+  </extensions>
   <testsuites>
     <testsuite name="Unit test">
       <directory>./tests</directory>
