@@ -1,3 +1,21 @@
+# S.O.L.I.D.
+en principio, dado que la aplicación es bastante pequeña, no incorporamos CQRS, ni mensajeria de eventos 
+de dominio, no podemos "cumplir" todos los principios SOLID. 
+## Cumplimos SRP, ISP, DIP
+- `SRP`: lo encontramos en todas las clases, cumpliendo que cada una de ellas hace una unica "acción" dentro
+de su lógica. El Handler, los distintos Services, e incluso la implementación del Repository
+únicamente tienen un método expuesto (además del constructor, necesario para la composición).
+- `ISP`: tenemos (en este caso) una interfaz de dominio, el cual cumple la implementación, PERO 
+en el servicio (en este caso, el Handler) se requiere en la composición dicho interfaz en lugar de
+  la clase correspondiente.
+- `DIP`: El mismo ejemplo que tenemos en ISP lo encontramos aquí, puesto que el Handler requiere el interfaz
+en lugar de la clase repository de implementación.
+
+## No aplican OCP, LIP
+- `OCP`: este principio no se aplica de momento, dado que no tenemos un sistema de mensajeria de eventos.
+- `LIP`: actualmente no hay ninguna clase principal y alguna que herede de esta. Por lo tanto, este principio
+no se puede aplicar de momento.
+
 # Estructura DDD
 Dado que la aplicación es bastante sencilla, la estructura de carpetas de `src` se ha simplificado:
 ```
