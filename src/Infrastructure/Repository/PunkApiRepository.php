@@ -30,7 +30,7 @@ class PunkApiRepository implements BeerRepositoryInterface
      */
     public function searchByCriteria(FoodQuery $query): array
     {
-        $uri = self::ROOT_ENDPOINT.'/beers?'.http_build_query(['food' => $query->food()]);
+        $uri = self::ROOT_ENDPOINT.'/beers?'.http_build_query(['food' => $query->food()->getValue()]);
         try {
             $results = $this->client->get($uri)->getBody()->getContents();
 
