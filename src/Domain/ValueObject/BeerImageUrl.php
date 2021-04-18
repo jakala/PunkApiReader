@@ -21,11 +21,13 @@ final class BeerImageUrl extends StringValueObject
     /**
      * @throws ImageUrlException
      */
-    private function validateUrl(string $url): void
+    private function validateUrl(string $url = null): void
     {
         $components = parse_url($url);
-        if (empty($components['host']) || self::BASE_URI !== $components['host']) {
- //           throw new ImageUrlException('url "'.$url.'" is not from PunkApi', 400);
+        if(!is_null($url)) {
+            if (empty($components['host']) || self::BASE_URI !== $components['host']) {
+                throw new ImageUrlException('url "' . $url . '" is not from PunkApi', 400);
+            }
         }
     }
 }
