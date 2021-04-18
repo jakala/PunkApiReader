@@ -5,7 +5,7 @@ una api de ejemplo. En este caso utilizamos [PunkApi](https://punkapi.com/).
 Se incluye un docker-compose para poder probar directamente la aplicación. 
 
 ## Documentación
-- Información sobre  [DDD](docs/1_DDD.md)
+- Información sobre  [SOLID y DDD](docs/1_DDD.md)
 - [Instalación](docs/2_INSTALACION.md)
 - [Uso de la Api](docs/3_USO_DE_API.md)
 - [Makefile](docs/4_MAKEFILE.md)
