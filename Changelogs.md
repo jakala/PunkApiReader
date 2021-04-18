@@ -1,4 +1,17 @@
 ### PunkApiReader
+- v0.3.0: se añade un Makefile para simplificar algunas tareas de ejecución en consola, como
+
+   crear el contenedor
+
+   ejecutar los tests unitarios y la cobertura de test
+
+   ejecutar los test Behat
+
+   crear las metricas php
+
+   ejecutar php-cs-fixer en el repositorio
+
+
 - v0.2.0: añadidas las herramientas de cobertura y metricas. 
   
    Varios tests hasta llegar a cobertura de 82% de unitarios
