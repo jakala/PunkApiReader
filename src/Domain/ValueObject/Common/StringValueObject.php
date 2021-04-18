@@ -7,17 +7,17 @@ namespace App\Domain\ValueObject\Common;
  */
 abstract class StringValueObject
 {
-    private string $value;
+    private ?string $value;
 
     /**
      * StringValueObject constructor.
      */
-    public function __construct(string $value)
+    public function __construct(string $value = null)
     {
         $this->value = $value;
     }
 
-    public function getValue(): string
+    public function getValue(): ?string
     {
         return $this->value;
     }
