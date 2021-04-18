@@ -2,8 +2,8 @@
 
 namespace App\Infrastructure\Controller;
 
-use App\Application\Handler\GetBeerDetailListHandler;
 use App\Application\Command\FoodQuery;
+use App\Application\Handler\GetBeerDetailListHandler;
 use App\Domain\ValueObject\Food;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

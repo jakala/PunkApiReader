@@ -2,8 +2,8 @@
 
 namespace App\Domain\ValueObject;
 
-use App\Domain\ValueObject\Common\StringValueObject;
 use App\Domain\Exception\ImageUrlException;
+use App\Domain\ValueObject\Common\StringValueObject;
 
 final class BeerImageUrl extends StringValueObject
 {
