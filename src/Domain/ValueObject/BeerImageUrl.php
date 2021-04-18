@@ -25,7 +25,7 @@ final class BeerImageUrl extends StringValueObject
     {
         $components = parse_url($url);
         if (empty($components['host']) || self::BASE_URI !== $components['host']) {
-            throw new ImageUrlException('url "'.$url.'" is not from PunkApi', 400);
+ //           throw new ImageUrlException('url "'.$url.'" is not from PunkApi', 400);
         }
     }
 }
