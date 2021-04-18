@@ -33,3 +33,12 @@ fixer: CMD=fix src
 .PHONY: fixerparams
 fixerparams fixer:
 	vendor/bin/php-cs-fixer $(CMD)
+
+# ejecutar test unitarios phpunit
+.PHONY: tests
+tests: CMD=vendor/bin/phpunit --coverage-html var/coverage
+
+.PHONY: phpunit
+phpunit tests:
+	docker exec -ti punkapireader $(CMD)
+

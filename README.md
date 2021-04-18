@@ -4,14 +4,26 @@ una api de ejemplo. En este caso utilizamos [PunkApi](https://punkapi.com/).
 
 Se incluye un docker-compose para poder probar directamente la aplicación. 
 
+### Makefile
+
+Se añade un archivo `Makefile`, que nos permite simplificar algunas tareas típicas de consola.
+Estas tareas son las siguientes:
+
+- crear el contenedor de la app: `make compose`
+- ejecutar tests unitarios (creando cobertura test): `make tests`  
+- pasar test Behat: `make behat`
+- crear métricas de php: `make metrics`
+- pasar php-cs-fixer: `make fixer`
+
+
 ### Instalación
 - descargamos el ejemplo con git:
 ```
 git clone https://github.com/jakala/PunkApiReader.git
 ```
-- Entramos en el directorio del proyecto, y ejecutamos docker-compose:
+- Entramos en el directorio del proyecto, y ejecutamos:
 ```
-docker-compose up -d
+make compose
 ```
 - Nos creará un contenedor docker al que podemos acceder con nuestro navegador en:
 ```
@@ -65,10 +77,10 @@ En el caso del endpoint `/detail-beers?food=meal` se muestran ademas tres parame
   }
 ]
 ```
-### tests
-Para ejecutar los test, podemos utilizar directamente docker, ejecutando el comando:
+### tests unitarios
+Para ejecutar los test, y crear al mismo tiempo la cobertura en `var/coverage`:
 ```
-docker exec -ti punkapireader vendor/bin/phpunit ./tests
+make tests
 ```
 
 ### Notas
@@ -82,6 +94,5 @@ dentro de la estructura. En su lugar tenemos algo más básico con los directori
 
 # TODO
 - implementar CQRS
-- usar scripts (tipo make) para simplificar la creación de informes de cobertura y tests  
 - despliegue con CI/CD (quizás github actions?)
 - control propio de errores (mostrar un json con una respuesta de la exception lanzada)
