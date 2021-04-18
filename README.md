@@ -5,7 +5,7 @@ una api de ejemplo. En este caso utilizamos [PunkApi](https://punkapi.com/).
 Se incluye un docker-compose para poder probar directamente la aplicación. 
 
 ## Requisitos
-- php 8.0
+- php 8.0 instalado en local
 - Docker y Docker-compose
 - composer
 
@@ -15,6 +15,7 @@ Se incluye un docker-compose para poder probar directamente la aplicación.
 - [Uso de la Api](docs/3_USO_DE_API.md)
 - [Makefile](docs/4_MAKEFILE.md)
 - [test unitarios y behat](docs/5_TESTS.md)
+- [Errores conocidos](docs/6_ERRORES.md)
 
 ## Notas
 - Actualmente solo admitimos el parámetro `food`. Cualquier otro parámetro es ignorado en el proceso.
