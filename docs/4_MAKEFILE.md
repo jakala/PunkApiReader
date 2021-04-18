@@ -10,3 +10,4 @@ disponibles son:
 - `make metrics`: crea las métricas con php-metrics, dentro de la carpeta var/metrics
 - `make fixer`: nos pasa el php-cs-fixer por la carpeta src.
 - `make tests`: ejecuta los test de phpunit. También genera la información de cobertura.
+- `make vendors`: descarga las carpetas de vendors llamando al composer local.
