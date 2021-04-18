@@ -5,6 +5,7 @@ una api de ejemplo. En este caso utilizamos [PunkApi](https://punkapi.com/).
 Se incluye un docker-compose para poder probar directamente la aplicación. 
 
 ## Requisitos
+- php 8.0
 - Docker y Docker-compose
 - composer
 
