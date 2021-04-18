@@ -42,3 +42,10 @@ tests: CMD=vendor/bin/phpunit --coverage-html var/coverage
 phpunit tests:
 	docker exec -ti punkapireader $(CMD)
 
+# instalar vendors
+.PHONY: install_composer
+install_composer: CMD=--ignore-platform-reqs
+
+.PHONY: vendors
+vendors install_composer:
+	composer install $(CMD)
