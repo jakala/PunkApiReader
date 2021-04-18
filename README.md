@@ -4,6 +4,10 @@ una api de ejemplo. En este caso utilizamos [PunkApi](https://punkapi.com/).
 
 Se incluye un docker-compose para poder probar directamente la aplicación. 
 
+## Requisitos
+- Docker y Docker-compose
+- composer
+
 ## Documentación
 - Información sobre  [SOLID y DDD](docs/1_DDD.md)
 - [Instalación](docs/2_INSTALACION.md)
