@@ -34,14 +34,14 @@ http://localhost:8000
 ### Uso de la api
 Disponemos de dos endpoints en este ejemplo:
 ```
-http://localhost:8000/beers
+http://localhost:8000/get-beers?food={string}
 
-http://localhost:8000/detail-beers
+http://localhost:8000/get-detail-beers?food={string}
 ```
 
 Cada endpoint acepta un único parámetro, `food`, el cual debe ser una cadena. 
 
-En el caso del endpoint `/beers?food=meal` se muestran tres campos, id, name y description:
+En el caso del endpoint `/get-beers?food=meal` se muestran tres campos, id, name y description:
 ```
 [
   {
@@ -57,7 +57,7 @@ En el caso del endpoint `/beers?food=meal` se muestran tres campos, id, name y d
 ]
 ```
 
-En el caso del endpoint `/detail-beers?food=meal` se muestran ademas tres parametros a mayores, image_url, tagline y first_brewed:
+En el caso del endpoint `/get-detail-beers?food=meal` se muestran ademas tres parametros a mayores, image_url, tagline y first_brewed:
 ```
 [
   {
