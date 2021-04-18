@@ -28,7 +28,10 @@ final class BeerFirstBrewed
     {
         $value = \DateTime::createFromFormat('m/Y', $datetime);
         if (false === $value) {
-            throw new FirstBrewedException('Datetime not valid: "'.$datetime.'"');
+            $value = \DateTime::createFromFormat('Y', $datetime);
+            if(false === $value) {
+                throw new FirstBrewedException('Datetime not valid: "' . $datetime . '"');
+            }
         }
 
         return $value;
