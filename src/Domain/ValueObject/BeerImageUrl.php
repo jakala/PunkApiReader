@@ -12,7 +12,7 @@ final class BeerImageUrl extends StringValueObject
     /**
      * @throws ImageUrlException
      */
-    public function __construct(string $value)
+    public function __construct(string $value = null)
     {
         $this->validateUrl($value);
         parent::__construct($value);
