@@ -4,50 +4,20 @@ Dado que la aplicación es bastante sencilla, la estructura de carpetas de `src`
 src/
 ├── Application
 │   ├── Command
-│   │   └── FoodQuery.php
 │   ├── Handler
-│   │   ├── GetBeerDetailListHandler.php
-│   │   └── GetBeerListHandler.php
 │   ├── Response
-│   │   ├── BeerDetailListResponse.php
-│   │   ├── BeerDetailResponse.php
-│   │   ├── BeerListResponse.php
-│   │   └── BeerResponse.php
 │   └── Service
-│       ├── CreateBeerFromApi.php
-│       └── CreateBeerlistFromApi.php
 ├── Domain
 │   ├── Entity
-│   │   ├── BeerList.php
-│   │   └── Beer.php
 │   ├── Event
 │   ├── Exception
-│   │   ├── FirstBrewedException.php
-│   │   └── ImageUrlException.php
 │   ├── Repository
-│   │   └── BeerRepositoryInterface.php
 │   └── ValueObject
-│       ├── BeerDescription.php
-│       ├── BeerFirstBrewed.php
-│       ├── BeerId.php
-│       ├── BeerImageUrl.php
-│       ├── BeerName.php
-│       ├── BeerTagline.php
-│       ├── Common
-│       └── Food.php
-├── Infrastructure
-│   ├── Controller
-│   │   ├── GetBeerDetailListController.php
-│   │   ├── GetBeerListController.php
-│   │   └── HealthCheckGetController.php
-│   ├── Exception
-│   │   └── ClientException.php
-│   ├── Repository
-│   │   ├── LocalPunkApiRepository.php
-│   │   └── PunkApiRepository.php
-│   └── Service
-└── Kernel.php
-
+└── Infrastructure
+   ├── Controller
+   ├── Exception
+   ├── Repository
+   └── Service
 ```
 ## Domain
 Tenemos dentro de esta carpeta todo lo referente a la parte de Dominio de nuestro negocio (en este caso, relacionado
